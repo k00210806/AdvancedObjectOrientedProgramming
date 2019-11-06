@@ -38,15 +38,15 @@
             this.radCash = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radDepositAmount = new System.Windows.Forms.RadioButton();
-            this.radCashsave = new System.Windows.Forms.RadioButton();
-            this.radCurrentAccount = new System.Windows.Forms.RadioButton();
+            this.cashSaveRadioButton = new System.Windows.Forms.RadioButton();
+            this.currentAccountRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBoxChequeBook = new System.Windows.Forms.CheckBox();
             this.checkBoxRecepit = new System.Windows.Forms.CheckBox();
-            this.BtnProceed = new System.Windows.Forms.Button();
+            this.proceedButton = new System.Windows.Forms.Button();
             this.BtnNext = new System.Windows.Forms.Button();
             this.BtnEnd = new System.Windows.Forms.Button();
-            this.txtDetails = new System.Windows.Forms.TextBox();
+            this.detailsTextBox = new System.Windows.Forms.TextBox();
             this.Identification.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -83,6 +83,7 @@
             this.txtPIN.Name = "txtPIN";
             this.txtPIN.Size = new System.Drawing.Size(215, 20);
             this.txtPIN.TabIndex = 1;
+            this.txtPIN.TextChanged += new System.EventHandler(this.TxtPIN_TextChanged);
             // 
             // label1
             // 
@@ -142,8 +143,8 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radDepositAmount);
-            this.groupBox2.Controls.Add(this.radCashsave);
-            this.groupBox2.Controls.Add(this.radCurrentAccount);
+            this.groupBox2.Controls.Add(this.cashSaveRadioButton);
+            this.groupBox2.Controls.Add(this.currentAccountRadioButton);
             this.groupBox2.Location = new System.Drawing.Point(404, 146);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(196, 99);
@@ -162,27 +163,27 @@
             this.radDepositAmount.Text = "Deposit Amount";
             this.radDepositAmount.UseVisualStyleBackColor = true;
             // 
-            // radCashsave
+            // cashSaveRadioButton
             // 
-            this.radCashsave.AutoSize = true;
-            this.radCashsave.Location = new System.Drawing.Point(6, 42);
-            this.radCashsave.Name = "radCashsave";
-            this.radCashsave.Size = new System.Drawing.Size(72, 17);
-            this.radCashsave.TabIndex = 2;
-            this.radCashsave.TabStop = true;
-            this.radCashsave.Text = "Cashsave";
-            this.radCashsave.UseVisualStyleBackColor = true;
+            this.cashSaveRadioButton.AutoSize = true;
+            this.cashSaveRadioButton.Location = new System.Drawing.Point(6, 42);
+            this.cashSaveRadioButton.Name = "cashSaveRadioButton";
+            this.cashSaveRadioButton.Size = new System.Drawing.Size(72, 17);
+            this.cashSaveRadioButton.TabIndex = 2;
+            this.cashSaveRadioButton.TabStop = true;
+            this.cashSaveRadioButton.Text = "Cashsave";
+            this.cashSaveRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radCurrentAccount
+            // currentAccountRadioButton
             // 
-            this.radCurrentAccount.AutoSize = true;
-            this.radCurrentAccount.Location = new System.Drawing.Point(6, 19);
-            this.radCurrentAccount.Name = "radCurrentAccount";
-            this.radCurrentAccount.Size = new System.Drawing.Size(102, 17);
-            this.radCurrentAccount.TabIndex = 1;
-            this.radCurrentAccount.TabStop = true;
-            this.radCurrentAccount.Text = "Current Account";
-            this.radCurrentAccount.UseVisualStyleBackColor = true;
+            this.currentAccountRadioButton.AutoSize = true;
+            this.currentAccountRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.currentAccountRadioButton.Name = "currentAccountRadioButton";
+            this.currentAccountRadioButton.Size = new System.Drawing.Size(102, 17);
+            this.currentAccountRadioButton.TabIndex = 1;
+            this.currentAccountRadioButton.TabStop = true;
+            this.currentAccountRadioButton.Text = "Current Account";
+            this.currentAccountRadioButton.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -215,15 +216,15 @@
             this.checkBoxRecepit.Text = "Receipt Request";
             this.checkBoxRecepit.UseVisualStyleBackColor = true;
             // 
-            // BtnProceed
+            // proceedButton
             // 
-            this.BtnProceed.Location = new System.Drawing.Point(206, 326);
-            this.BtnProceed.Name = "BtnProceed";
-            this.BtnProceed.Size = new System.Drawing.Size(63, 22);
-            this.BtnProceed.TabIndex = 5;
-            this.BtnProceed.Text = "Proceed";
-            this.BtnProceed.UseVisualStyleBackColor = true;
-            this.BtnProceed.Click += new System.EventHandler(this.Button1_Click);
+            this.proceedButton.Location = new System.Drawing.Point(206, 326);
+            this.proceedButton.Name = "proceedButton";
+            this.proceedButton.Size = new System.Drawing.Size(63, 22);
+            this.proceedButton.TabIndex = 5;
+            this.proceedButton.Text = "Proceed";
+            this.proceedButton.UseVisualStyleBackColor = true;
+            this.proceedButton.Click += new System.EventHandler(this.ProceedButton_Click);
             // 
             // BtnNext
             // 
@@ -233,7 +234,7 @@
             this.BtnNext.TabIndex = 6;
             this.BtnNext.Text = "Next";
             this.BtnNext.UseVisualStyleBackColor = true;
-            this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
+            this.BtnNext.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // BtnEnd
             // 
@@ -245,24 +246,24 @@
             this.BtnEnd.UseVisualStyleBackColor = true;
             this.BtnEnd.Click += new System.EventHandler(this.BtnEnd_Click);
             // 
-            // txtDetails
+            // detailsTextBox
             // 
-            this.txtDetails.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtDetails.Location = new System.Drawing.Point(161, 354);
-            this.txtDetails.Multiline = true;
-            this.txtDetails.Name = "txtDetails";
-            this.txtDetails.Size = new System.Drawing.Size(439, 76);
-            this.txtDetails.TabIndex = 8;
+            this.detailsTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.detailsTextBox.Location = new System.Drawing.Point(161, 354);
+            this.detailsTextBox.Multiline = true;
+            this.detailsTextBox.Name = "detailsTextBox";
+            this.detailsTextBox.Size = new System.Drawing.Size(439, 76);
+            this.detailsTextBox.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 465);
-            this.Controls.Add(this.txtDetails);
+            this.Controls.Add(this.detailsTextBox);
             this.Controls.Add(this.BtnEnd);
             this.Controls.Add(this.BtnNext);
-            this.Controls.Add(this.BtnProceed);
+            this.Controls.Add(this.proceedButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -270,6 +271,7 @@
             this.Controls.Add(this.SouthWest);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Identification.ResumeLayout(false);
             this.Identification.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -295,15 +297,15 @@
         private System.Windows.Forms.RadioButton radCash;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radDepositAmount;
-        private System.Windows.Forms.RadioButton radCashsave;
-        private System.Windows.Forms.RadioButton radCurrentAccount;
+        private System.Windows.Forms.RadioButton cashSaveRadioButton;
+        private System.Windows.Forms.RadioButton currentAccountRadioButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox checkBoxChequeBook;
         private System.Windows.Forms.CheckBox checkBoxRecepit;
-        private System.Windows.Forms.Button BtnProceed;
+        private System.Windows.Forms.Button proceedButton;
         private System.Windows.Forms.Button BtnNext;
         private System.Windows.Forms.Button BtnEnd;
-        private System.Windows.Forms.TextBox txtDetails;
+        private System.Windows.Forms.TextBox detailsTextBox;
     }
 }
 

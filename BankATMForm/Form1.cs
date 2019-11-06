@@ -1,39 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace BankATMForm
 {
     public partial class Form1 : Form
     {
-        public int Amount;
+        public int amount;
         public int PIN;
-        public int Balance = 650;
+        public int balance;
         public int AmountInOut;
         public string Receipt;
         public string CheckBook;
-        private DialogResult returnValue;
-
-        public object Interaction { get; private set; }
-
+        public double withdraw;
+        public double lodgment;
         public Form1()
         {
             InitializeComponent();
         }
+
+        public int GetPin()
+        {
+            return Convert.ToInt32(txtPIN.Text);
+        }
         private void SouthWest_Click(object sender, EventArgs e)
         {
 
+
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ProceedButton_Click(object sender, EventArgs e)
         {
-            PIN = Convert.ToInt32(txtPIN.Text);
+            PIN = GetPin();
+
             if (checkBoxRecepit.Checked == true)
             {
                 Receipt = "Receipt will be Printed";
@@ -44,7 +43,7 @@ namespace BankATMForm
             }
             if (checkBoxChequeBook.Checked == true)
             {
-                CheckBook = "checkBook will be posted";
+                CheckBook = "Cheque Book will be posted";
             }
             else
             {
@@ -63,118 +62,156 @@ namespace BankATMForm
                 Enquiry();
             }
         }
+
+        private int getAmountToWithdraw()
+        {
+            withdraw = Convert.ToDouble(Interaction.InputBox("Please enter amount to Withdraw: ", "amount to withdrawal"));
+            return Convert.ToInt32(MessageBox.Show("Please enter amount to Withdrawal:",
+               "Amount to withdrawal"));
+
+        }
+        private void DisplayMessageToUser(int amount)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBoxIcon icon = MessageBoxIcon.Information;
+            string messageBoxCaption = "Amount to withdrawal";
+            String messageBoxText = "Amount to withdrawal: " + String.Format("{0:€,0.00}", amount);
+
+
+            MessageBox.Show(messageBoxText, messageBoxCaption, buttons, icon);
+        }
         private void Cash()
         {
-            string info = "Amount to withdrawal";
-            MessageBoxIcon icon;
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-           Amount = Convert.ToInt32(Interaction.InputBox("Please enter amount to Withdrawal:",
-              "Amount to withdrawal"));
-            icon = MessageBoxIcon.Information;
-            MessageBox.Show(Convert.ToString("Amount to withdrawal: " +
-                String.Format("{0:€,0.00}", Amount)), info, buttons, icon);
-            if (radCurrentAccount.Checked==true)
+            int amount = getAmountToWithdraw();
+
+            DisplayMessageToUser(amount);
+
+
+            if (currentAccountRadioButton.Checked == true)
             {
-                if (Amount < Balance + 200)
-                {
-                    Balance = Balance - Amount;
-                    txtDetails.Text = "PIN: " + PIN.ToString() + "\r\n" +
-                        "withdrawal" + "\r\n" + "Balance:" + "\t" + String.Format("{0:€,0.00}", (Balance.ToString())) +
-                        "\r\n" + Receipt + "\r\n" + CheckBook;
-                }
-                else
-                {
-                    MessageBox.Show("Withdrawal Denied ");
-                }
-                }
-            else if (radCashsave.Checked== true)
+                HandleCurrentAccount(amount);
+            }
+            else if (cashSaveRadioButton.Checked == true)
             {
-                if (Amount < Balance)
-                {
-                    Balance = Balance - Amount;
-                    txtDetails.Text = "PIN: " + PIN.ToString() + "\r\n" + "Withdrawal" +
-                        "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (Balance.ToString())) + "\r\n" +
-                        Receipt + "\r\n" + CheckBook;
-                }
-                else
-                {
-                    MessageBox.Show("Withdrawal Denied- Insufficient Funds Available ");
-                }
-                }
+                HandleSavingsAccount(amount);
+            }
             else
             {
-                if (Amount < Balance)
-                {
-                    Balance = Balance - Amount;
-                    txtDetails.Text = "PIN: " + PIN.ToString() + "\r\n" + "Withdrawal" +
-                        "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (Balance.ToString())) + "\r\n" +
-                        Receipt + "\r\n" + CheckBook;
-                }
-                else
-                {
-                    MessageBox.Show("Withdrawal Denied- Insufficient Funds Available ");
-
-                }
-
-                }
+                HandleDepositAccount(amount);
             }
+        }
+
+        private void HandleDepositAccount(int amount)
+        {
+            if (amount < balance)
+            {
+                balance = balance - amount;
+                detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" + "Withdrawal" +
+                    "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (balance.ToString())) + "\r\n" +
+                    Receipt + "\r\n" + CheckBook;
+            }
+            else
+            {
+                MessageBox.Show("Withdrawal Denied- Insufficient Funds Available ");
+
+            }
+        }
+
+        private void HandleSavingsAccount(int amount)
+        {
+            if (amount < balance)
+            {
+                balance = balance - amount;
+                detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" + "Withdrawal" +
+                    "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (balance.ToString())) + "\r\n" +
+                    Receipt + "\r\n" + CheckBook;
+            }
+            else
+            {
+                MessageBox.Show("Withdrawal Denied- Insufficient Funds Available ");
+            }
+        }
+
+        private void HandleCurrentAccount(int amount)
+        {
+            if (amount < balance + 200)
+            {
+                balance = balance - amount;
+                detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" +
+                    "withdrawal" + "\r\n" + "Balance:" + "\t" + String.Format("{0:€,0.00}", (balance.ToString())) +
+                    "\r\n" + Receipt + "\r\n" + CheckBook;
+            }
+            else
+            {
+                MessageBox.Show("Withdrawal Denied ");
+            }
+        }
+
         private void Lodgement()
         {
             string info = "Amount to Lodge";
             MessageBoxIcon icon;
             MessageBoxButtons buttons = MessageBoxButtons.OK;
-            Amount = Convert.ToInt32(Interaction.InputBox("Please enter amount to Lodge:", "Amount to lodge"));
+            lodgment = Convert.ToDouble(Interaction.InputBox("Please enter amount to lodge:", "amount"));
+            
             icon = MessageBoxIcon.Information;
+
             MessageBox.Show(Convert.ToString("Amount to Lodge:" +
-                String.Format("{0:€,0.00}", Amount)), info, buttons, icon);
-            Balance = Balance - Amount;
-            txtDetails.Text = "PIN: " + PIN.ToString() + "\r\n" + "Lodgement" +
-                "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (Balance.ToString())) + "\r\n" +
+                String.Format("{0:€,0.00}", amount)), info, buttons, icon);
+
+            balance = balance - amount;
+            detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" + "Lodgement" +
+                "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (balance.ToString())) + "\r\n" +
                 Receipt + "\r\n" + CheckBook;
         }
         private void Enquiry()
         {
-            txtDetails.Text = "PIN: " + PIN.ToString() + "\r\n" + "Enquiry"+
-                "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (Balance.ToString())) + "\r\n" +
+            detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" + "Enquiry" +
+                "\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (balance.ToString())) + "\r\n" +
                 Receipt + "\r\n" + CheckBook;
-        }
 
+        }
         private void BtnEnd_Click(object sender, EventArgs e)
         {
-            string text = "Are you sure you wnat to end this Program?";
+            string text = "Are you sure you want to end this Program?";
             string caption = "End Dialogues";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult = MessageBox.Show(text, caption, buttons);
-            if (returnValue == DialogResult.Yes)
+            DialogResult dialogResult = MessageBox.Show(text, caption, buttons);
+            if (dialogResult == DialogResult.Yes)
             {
                 Close();
+                ///Application.Exit();
             }
         }
 
-        private void BtnNext_Click(object sender, EventArgs e)
+        private void NextButton_Click(object sender, EventArgs e)
         {
-            txtPIN.Text = "";
+            ResetFormToDefault();
+        }
+
+        private void ResetFormToDefault()
+        {
+            txtPIN.Text = String.Empty;
             radCash.Checked = false;
-            radLodgment.Checked = false;
             radEnquiry.Checked = false;
             radDepositAmount.Checked = false;
-            radCurrentAccount.Checked = false;
-            radCashsave.Checked = false;
+            currentAccountRadioButton.Checked = false;
+            cashSaveRadioButton.Checked = false;
             checkBoxRecepit.Checked = false;
             checkBoxChequeBook.Checked = false;
-            txtDetails.Text = "";
+            radLodgment.Checked = false;
+            detailsTextBox.Text = String.Empty;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtPIN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
-                }
-           
-
-        
-        
-
-      
-
-
-
-
-
+}
