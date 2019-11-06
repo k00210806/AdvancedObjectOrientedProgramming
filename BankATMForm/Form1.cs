@@ -6,12 +6,12 @@ namespace BankATMForm
 {
 	public partial class Form1 : Form
 	{
-		public int amount;
-		public int PIN;
-		public double balance;
-		public int AmountInOut;
-		public double withdraw;
-		public double lodgment;
+		private int amount;
+		private int PIN;
+		private double balance;
+		private int AmountInOut;
+		private double withdraw;
+		private double lodgment;
 
 		//
 		//	Output Window
