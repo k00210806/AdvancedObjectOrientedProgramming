@@ -6,12 +6,8 @@ namespace BankATMForm
 {
 	public partial class Form1 : Form
 	{
-		private int amount;
 		private int PIN;
-		private double balance;
-		private int AmountInOut;
-		private double withdraw;
-		private double lodgment;
+		private double acccountBalance;
 
 		//
 		//	Output Window
@@ -107,7 +103,7 @@ namespace BankATMForm
 			//
 			//  "If a withdrawal is requested an input box is displayed and the amount of the withdrawal keyed in (Figure b)."
 			//
-			withdraw = getAmountToWithdraw();
+			double withdraw = getAmountToWithdraw();
 
 			DisplayMessageToUser(withdraw);
 
@@ -127,11 +123,11 @@ namespace BankATMForm
 
 		private void HandleAccount(double amount)
 		{
-			if (amount < balance)
+			if (amount < acccountBalance)
 			{
-				balance = balance - amount;
+				acccountBalance = acccountBalance - amount;
 				detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" + "Withdrawal" +
-					"\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (balance.ToString())) + "\r\n" +
+					"\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (acccountBalance.ToString())) + "\r\n" +
 					Receipt + "\r\n" + CheckBook;
 			}
 			else
@@ -142,11 +138,11 @@ namespace BankATMForm
 
 		private void HandleCurrentAccount(double amount)
 		{
-			if (amount < balance + 200)
+			if (amount < acccountBalance + 200)
 			{
-				balance = balance - amount;
+				acccountBalance = acccountBalance - amount;
 				detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" +
-					"withdrawal" + "\r\n" + "Balance:" + "\t" + String.Format("{0:€,0.00}", (balance.ToString())) +
+					"withdrawal" + "\r\n" + "Balance:" + "\t" + String.Format("{0:€,0.00}", (acccountBalance.ToString())) +
 					"\r\n" + Receipt + "\r\n" + CheckBook;
 			}
 			else
@@ -155,27 +151,45 @@ namespace BankATMForm
 			}
 		}
 
+
+		private double getAmountToLodge()
+		{
+			String prompt = "Please enter amount to lodge:";
+			String title = "amount to lodge";
+
+			return Convert.ToDouble(Interaction.InputBox(prompt, title));
+		}
 		private void Lodgement()
 		{
-			string info = "Amount to Lodge";
-			MessageBoxIcon icon;
-			MessageBoxButtons buttons = MessageBoxButtons.OK;
-			lodgment = Convert.ToDouble(Interaction.InputBox("Please enter amount to lodge:", "amount"));
 
-			icon = MessageBoxIcon.Information;
+			double lodgmentAmount = getAmountToLodge();
 
-			MessageBox.Show(Convert.ToString("Amount to Lodge:" +
-				String.Format("{0:€,0.00}", amount)), info, buttons, icon);
+			dispalyLodgmentConfimation(lodgmentAmount);
 
-			balance = balance - amount;
+
+			acccountBalance += lodgmentAmount;
+
 			detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" + "Lodgement" +
-				"\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (balance.ToString())) + "\r\n" +
+				"\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (acccountBalance.ToString())) + "\r\n" +
 				Receipt + "\r\n" + CheckBook;
 		}
+
+		private void dispalyLodgmentConfimation(double lodgmentAmount)
+		{
+			string info = "Amount to Lodge";
+			MessageBoxIcon icon = MessageBoxIcon.Information;
+			MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+			
+
+			MessageBox.Show(Convert.ToString("Amount to Lodge:" +
+				String.Format("{0:€,0.00}", lodgmentAmount)), info, buttons, icon);
+		}
+
 		private void Enquiry()
 		{
 			detailsTextBox.Text = "PIN: " + PIN.ToString() + "\r\n" + "Enquiry" +
-				"\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (balance.ToString())) + "\r\n" +
+				"\r\n" + "Balance: " + "\t" + string.Format("{0:€,0.00}", (acccountBalance.ToString())) + "\r\n" +
 				Receipt + "\r\n" + CheckBook;
 
 		}

@@ -1,0 +1,10 @@
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\bin\Debug\BankATMForm.exe.config
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\bin\Debug\BankATMForm.exe
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\bin\Debug\BankATMForm.pdb
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.csprojAssemblyReference.cache
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.Form1.resources
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.Properties.Resources.resources
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.csproj.GenerateResource.cache
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.csproj.CoreCompileInputs.cache
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.exe
+U:\SourceCode\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.pdb
