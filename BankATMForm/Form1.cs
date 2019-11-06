@@ -8,7 +8,7 @@ namespace BankATMForm
     {
         public int amount;
         public int PIN;
-        public int balance;
+        public double balance;
         public int AmountInOut;
         public string Receipt;
         public string CheckBook;
@@ -49,9 +49,9 @@ namespace BankATMForm
             {
                 CheckBook = "";
             }
-            if (radCash.Checked == true)
+            if (cashWithdrawalRadioButton.Checked == true)
             {
-                Cash();
+                CashWithdrawal();
             }
             else if (radLodgment.Checked == true)
             {
@@ -63,33 +63,33 @@ namespace BankATMForm
             }
         }
 
-        private int getAmountToWithdraw()
+        private double getAmountToWithdraw()
         {
-            withdraw = Convert.ToDouble(Interaction.InputBox("Please enter amount to Withdraw: ", "amount to withdrawal"));
-            return Convert.ToInt32(MessageBox.Show("Please enter amount to Withdrawal:",
-               "Amount to withdrawal"));
+            String prompt = "Please enter amount to Withdraw:";
+            String title = "amount to withdrawal";
 
+            return Convert.ToDouble(Interaction.InputBox(prompt, title));
         }
-        private void DisplayMessageToUser(int amount)
+        private void DisplayMessageToUser(double amount)
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             MessageBoxIcon icon = MessageBoxIcon.Information;
-            string messageBoxCaption = "Amount to withdrawal";
-            String messageBoxText = "Amount to withdrawal: " + String.Format("{0:€,0.00}", amount);
+            string messageBoxCaption = "Amount to withdraw";
+            String messageBoxText = "Amount to withdraw: " + String.Format("{0:€,0.00}", amount);
 
 
             MessageBox.Show(messageBoxText, messageBoxCaption, buttons, icon);
         }
-        private void Cash()
+        private void CashWithdrawal()
         {
-            int amount = getAmountToWithdraw();
+            withdraw = getAmountToWithdraw();
 
-            DisplayMessageToUser(amount);
+            DisplayMessageToUser(withdraw);
 
 
             if (currentAccountRadioButton.Checked == true)
             {
-                HandleCurrentAccount(amount);
+                HandleCurrentAccount(withdraw);
             }
             else if (cashSaveRadioButton.Checked == true)
             {
@@ -132,7 +132,7 @@ namespace BankATMForm
             }
         }
 
-        private void HandleCurrentAccount(int amount)
+        private void HandleCurrentAccount(double amount)
         {
             if (amount < balance + 200)
             {
@@ -192,7 +192,7 @@ namespace BankATMForm
         private void ResetFormToDefault()
         {
             txtPIN.Text = String.Empty;
-            radCash.Checked = false;
+            cashWithdrawalRadioButton.Checked = false;
             radEnquiry.Checked = false;
             radDepositAmount.Checked = false;
             currentAccountRadioButton.Checked = false;

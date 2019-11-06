@@ -35,7 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radEnquiry = new System.Windows.Forms.RadioButton();
             this.radLodgment = new System.Windows.Forms.RadioButton();
-            this.radCash = new System.Windows.Forms.RadioButton();
+            this.cashWithdrawalRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radDepositAmount = new System.Windows.Forms.RadioButton();
             this.cashSaveRadioButton = new System.Windows.Forms.RadioButton();
@@ -99,7 +99,7 @@
             // 
             this.groupBox1.Controls.Add(this.radEnquiry);
             this.groupBox1.Controls.Add(this.radLodgment);
-            this.groupBox1.Controls.Add(this.radCash);
+            this.groupBox1.Controls.Add(this.cashWithdrawalRadioButton);
             this.groupBox1.Location = new System.Drawing.Point(161, 146);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(220, 99);
@@ -131,14 +131,14 @@
             // 
             // radCash
             // 
-            this.radCash.AutoSize = true;
-            this.radCash.Location = new System.Drawing.Point(9, 19);
-            this.radCash.Name = "radCash";
-            this.radCash.Size = new System.Drawing.Size(105, 17);
-            this.radCash.TabIndex = 0;
-            this.radCash.TabStop = true;
-            this.radCash.Text = "Cash Withdrawal";
-            this.radCash.UseVisualStyleBackColor = true;
+            this.cashWithdrawalRadioButton.AutoSize = true;
+            this.cashWithdrawalRadioButton.Location = new System.Drawing.Point(9, 19);
+            this.cashWithdrawalRadioButton.Name = "radCash";
+            this.cashWithdrawalRadioButton.Size = new System.Drawing.Size(105, 17);
+            this.cashWithdrawalRadioButton.TabIndex = 0;
+            this.cashWithdrawalRadioButton.TabStop = true;
+            this.cashWithdrawalRadioButton.Text = "Cash Withdrawal";
+            this.cashWithdrawalRadioButton.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -294,7 +294,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radEnquiry;
         private System.Windows.Forms.RadioButton radLodgment;
-        private System.Windows.Forms.RadioButton radCash;
+        private System.Windows.Forms.RadioButton cashWithdrawalRadioButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radDepositAmount;
         private System.Windows.Forms.RadioButton cashSaveRadioButton;
