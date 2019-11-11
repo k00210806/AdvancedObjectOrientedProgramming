@@ -12,22 +12,21 @@ namespace NorthwindCRUDExample
 {
 	public partial class CustomerEditForm : Form
 	{ 
-		NorthwindDataSet.CustomersRow drChangeRow;
+		
 	
 		public CustomerEditForm()
 		{
 			InitializeComponent();
 		}
+		public CustomerEditForm(MainForm mainForm) : this()
+		{
+			this.MdiParent = mainForm;
+		}
 
-		private void Form6_Load(object sender, EventArgs e)
+		private void CustomerEditForm_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'northwindDataSet.Customers' table. You can move, or remove it, as needed.
 			this.customersTableAdapter.Fill(this.northwindDataSet.Customers);
-
-		}
-
-		private void RegionLabel_Click(object sender, EventArgs e)
-		{
 
 		}
 
@@ -38,10 +37,14 @@ namespace NorthwindCRUDExample
 
 		private void Editbutton_Click(object sender, EventArgs e)
 		{
-			drChangeRow = northwindDataSet.Customers.FindByCustomerID(customerIDTextBox.Text);
+			NorthwindDataSet.CustomersRow drChangeRow = northwindDataSet.Customers.FindByCustomerID(customerIDTextBox.Text);
 			drChangeRow.BeginEdit();
-			GetValues();
+			GetValues(drChangeRow);
 			drChangeRow.EndEdit();
+
+			this.Validate();
+			this.customersBindingSource.EndEdit();
+			this.tableAdapterManager.UpdateAll(this.northwindDataSet);
 			try
 			{
 				MessageBox.Show("Update succesful");
@@ -49,12 +52,9 @@ namespace NorthwindCRUDExample
 			catch (InvalidCastException ex)
 			{
 				MessageBox.Show(ex.Message);
-
-
 			}
-
 		}
-		private void GetValues()
+		private void GetValues(NorthwindDataSet.CustomersRow drChangeRow)
 		{
 			drChangeRow.ContactName = contactNameTextBox.Text;
 			drChangeRow.ContactTitle = contactTitleTextBox.Text;
@@ -65,9 +65,6 @@ namespace NorthwindCRUDExample
 			drChangeRow.Country = countryTextBox.Text;
 			drChangeRow.Phone = phoneTextBox.Text;
 			drChangeRow.Fax = faxTextBox.Text;
-
 		}
 	}
-
-	
 }

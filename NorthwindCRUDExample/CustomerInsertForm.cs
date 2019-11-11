@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace NorthwindCRUDExample
 {
-	public partial class AddCustomers : Form
+	public partial class CustomerInsertForm : Form
 	{
-		public AddCustomers()
+		public CustomerInsertForm()
 		{
 			InitializeComponent();
+		}
+		public CustomerInsertForm(MainForm mainForm) : this()
+		{
+			this.MdiParent = mainForm;
 		}
 
 		private void Label5_Click(object sender, EventArgs e)

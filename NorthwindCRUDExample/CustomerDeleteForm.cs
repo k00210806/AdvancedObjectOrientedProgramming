@@ -16,6 +16,10 @@ namespace NorthwindCRUDExample
 		{
 			InitializeComponent();
 		}
+		public CustomerDeleteForm(MainForm mainForm) : this()
+		{
+			this.MdiParent = mainForm;
+		}
 
 		private void Form7_Load(object sender, EventArgs e)
 		{

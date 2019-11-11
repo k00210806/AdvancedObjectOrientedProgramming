@@ -70,11 +70,11 @@
     <Compile Include="CustomerViewForm.designer.cs">
       <DependentUpon>CustomerViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddCustomers.cs">
+    <Compile Include="CustomerInsertForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCustomers.designer.cs">
-      <DependentUpon>AddCustomers.cs</DependentUpon>
+    <Compile Include="CustomerInsertForm.designer.cs">
+      <DependentUpon>CustomerInsertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerEditForm.cs">
       <SubType>Form</SubType>
@@ -110,8 +110,8 @@
     <EmbeddedResource Include="CustomerViewForm.resx">
       <DependentUpon>CustomerViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddCustomers.resx">
-      <DependentUpon>AddCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerInsertForm.resx">
+      <DependentUpon>CustomerInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerEditForm.resx">
       <DependentUpon>CustomerEditForm.cs</DependentUpon>

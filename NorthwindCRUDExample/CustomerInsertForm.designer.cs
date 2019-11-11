@@ -1,6 +1,6 @@
 ﻿namespace NorthwindCRUDExample
 {
-	partial class AddCustomers
+	partial class CustomerInsertForm
 	{
 		/// <summary>
 		/// Required designer variable.

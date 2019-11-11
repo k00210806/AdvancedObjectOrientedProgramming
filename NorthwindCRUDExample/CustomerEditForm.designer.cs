@@ -141,7 +141,6 @@
 			regionLabel.Size = new System.Drawing.Size(44, 13);
 			regionLabel.TabIndex = 12;
 			regionLabel.Text = "Region:";
-			regionLabel.Click += new System.EventHandler(this.RegionLabel_Click);
 			// 
 			// postalCodeLabel
 			// 
@@ -361,7 +360,7 @@
 			this.Returnbutton.Name = "Returnbutton";
 			this.Returnbutton.Size = new System.Drawing.Size(84, 24);
 			this.Returnbutton.TabIndex = 4;
-			this.Returnbutton.Text = "Return";
+			this.Returnbutton.Text = "Close";
 			this.Returnbutton.UseVisualStyleBackColor = true;
 			this.Returnbutton.Click += new System.EventHandler(this.Returnbutton_Click);
 			// 
@@ -374,7 +373,7 @@
 			this.label1.TabIndex = 5;
 			this.label1.Text = "Northwind Customers";
 			// 
-			// Form6
+			// CustomerEditForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -385,9 +384,9 @@
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.CompanyNamecomboBox);
 			this.Controls.Add(this.CustomerIDcomboBox);
-			this.Name = "Form6";
+			this.Name = "CustomerEditForm";
 			this.Text = "EditCustomers";
-			this.Load += new System.EventHandler(this.Form6_Load);
+			this.Load += new System.EventHandler(this.CustomerEditForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.northwindDataSetBindingSource)).EndInit();

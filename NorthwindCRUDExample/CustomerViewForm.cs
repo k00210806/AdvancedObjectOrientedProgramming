@@ -17,6 +17,11 @@ namespace NorthwindCRUDExample
 			InitializeComponent();
 		}
 
+		public CustomerViewForm(MainForm mainForm): this()
+		{
+			this.MdiParent = mainForm;
+		}
+
 		private void CustomersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
 		{
 			this.Validate();
