@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NorthwindCRUDExample
 {
-	public partial class MainMenu : Form
+	public partial class MainForm : Form
 	{
-		public MainMenu()
+		public MainForm()
 		{
 			InitializeComponent();
 		}
@@ -24,20 +17,25 @@ namespace NorthwindCRUDExample
 
 		private void AddCustToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Form5 form5 = new Form5();
+			AddCustomers form5 = new AddCustomers();
 			form5.Show();
 		}
 
 		private void EditCustToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Form6 form6 = new Form6();
+			CustomerEditForm form6 = new CustomerEditForm();
 			form6.Show();
 		}
 
 		private void DeleteByFindToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Form7 form7 = new Form7();
+			CustomerDeleteForm form7 = new CustomerDeleteForm();
 			form7.Show();
+		}
+
+		private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }

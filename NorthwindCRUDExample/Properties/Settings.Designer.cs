@@ -32,5 +32,14 @@ namespace NorthwindCRUDExample.Properties {
                 return ((string)(this["NorthwindConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Moylish")]
+        public string ApplicationPassword {
+            get {
+                return ((string)(this["ApplicationPassword"]));
+            }
+        }
     }
 }

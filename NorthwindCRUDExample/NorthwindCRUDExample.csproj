@@ -46,47 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="CustomerListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="CustomerListForm.designer.cs">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="CustomerViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="CustomerViewForm.designer.cs">
+      <DependentUpon>CustomerViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="AddCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="AddCustomers.designer.cs">
+      <DependentUpon>AddCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="CustomerEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <Compile Include="CustomerEditForm.designer.cs">
+      <DependentUpon>CustomerEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
+    <Compile Include="CustomerDeleteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <Compile Include="CustomerDeleteForm.designer.cs">
+      <DependentUpon>CustomerDeleteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NorthwindDataSet.cs">
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>
@@ -98,26 +98,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerViewForm.resx">
+      <DependentUpon>CustomerViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="AddCustomers.resx">
+      <DependentUpon>AddCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerEditForm.resx">
+      <DependentUpon>CustomerEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerDeleteForm.resx">
+      <DependentUpon>CustomerDeleteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

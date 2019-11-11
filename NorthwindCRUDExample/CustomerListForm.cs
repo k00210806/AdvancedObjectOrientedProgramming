@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NorthwindCRUDExample
 {
-	public partial class Form3 : Form
+	public partial class CustomerListForm : Form
 	{
-		public Form3()
+		public CustomerListForm()
 		{
 			InitializeComponent();
 		}

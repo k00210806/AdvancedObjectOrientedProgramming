@@ -1,6 +1,6 @@
 ﻿namespace NorthwindCRUDExample
 {
-	partial class MainMenu
+	partial class MainForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -75,33 +75,34 @@
 			// addCustToolStripMenuItem
 			// 
 			this.addCustToolStripMenuItem.Name = "addCustToolStripMenuItem";
-			this.addCustToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.addCustToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.addCustToolStripMenuItem.Text = "Add Cust";
 			this.addCustToolStripMenuItem.Click += new System.EventHandler(this.AddCustToolStripMenuItem_Click);
 			// 
 			// editCustToolStripMenuItem
 			// 
 			this.editCustToolStripMenuItem.Name = "editCustToolStripMenuItem";
-			this.editCustToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.editCustToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.editCustToolStripMenuItem.Text = "Edit Cust";
 			this.editCustToolStripMenuItem.Click += new System.EventHandler(this.EditCustToolStripMenuItem_Click);
 			// 
 			// deleteByFindToolStripMenuItem
 			// 
 			this.deleteByFindToolStripMenuItem.Name = "deleteByFindToolStripMenuItem";
-			this.deleteByFindToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.deleteByFindToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.deleteByFindToolStripMenuItem.Text = "Delete By Find";
 			this.deleteByFindToolStripMenuItem.Click += new System.EventHandler(this.DeleteByFindToolStripMenuItem_Click);
 			// 
-			// MainMenu
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
-			this.Name = "MainMenu";
+			this.Name = "MainForm";
 			this.Text = "Customer Main";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
 			this.Load += new System.EventHandler(this.MainMenu_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace NorthwindCRUDExample
 {
-	public partial class Form6 : Form
+	public partial class CustomerEditForm : Form
 	{ 
 		NorthwindDataSet.CustomersRow drChangeRow;
 	
-		public Form6()
+		public CustomerEditForm()
 		{
 			InitializeComponent();
 		}

@@ -1,6 +1,6 @@
 ﻿namespace NorthwindCRUDExample
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,6 @@
 			this.UsernametextBox.Name = "UsernametextBox";
 			this.UsernametextBox.Size = new System.Drawing.Size(172, 20);
 			this.UsernametextBox.TabIndex = 2;
-			this.UsernametextBox.TextChanged += new System.EventHandler(this.UsernametextBox_TextChanged);
 			// 
 			// PasswordtextBox
 			// 
@@ -68,7 +67,6 @@
 			this.PasswordtextBox.Name = "PasswordtextBox";
 			this.PasswordtextBox.Size = new System.Drawing.Size(172, 20);
 			this.PasswordtextBox.TabIndex = 4;
-			this.PasswordtextBox.TextChanged += new System.EventHandler(this.PasswordtextBox_TextChanged);
 			// 
 			// OKbutton
 			// 
@@ -102,7 +100,6 @@
 			this.Controls.Add(this.Usernamelabel);
 			this.Name = "Form1";
 			this.Text = "LoginForm1";
-			this.Load += new System.EventHandler(this.Form1_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

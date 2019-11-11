@@ -1,6 +1,6 @@
 ﻿namespace NorthwindCRUDExample
 {
-	partial class Form3
+	partial class CustomerListForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListForm));
 			this.northwindDataSet = new NorthwindCRUDExample.NorthwindDataSet();
 			this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.customersTableAdapter = new NorthwindCRUDExample.NorthwindDataSetTableAdapters.CustomersTableAdapter();

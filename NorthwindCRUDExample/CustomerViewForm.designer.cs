@@ -1,6 +1,6 @@
 ﻿namespace NorthwindCRUDExample
 {
-	partial class Form4
+	partial class CustomerViewForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -40,7 +40,7 @@
 			System.Windows.Forms.Label countryLabel;
 			System.Windows.Forms.Label phoneLabel;
 			System.Windows.Forms.Label faxLabel;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerViewForm));
 			this.northwindDataSet = new NorthwindCRUDExample.NorthwindDataSet();
 			this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.customersTableAdapter = new NorthwindCRUDExample.NorthwindDataSetTableAdapters.CustomersTableAdapter();
