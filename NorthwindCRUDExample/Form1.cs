@@ -10,11 +10,49 @@ using System.Windows.Forms;
 
 namespace NorthwindCRUDExample
 {
-	public partial class Form1 : Form
-	{
-		public Form1()
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void UsernametextBox_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void PasswordtextBox_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+		private void Form1_Load(object sender, EventArgs e)
 		{
-			InitializeComponent();
+
 		}
-	}
+
+		private void OKbutton_Click(object sender, EventArgs e)
+		
+			{
+			
+				if (PasswordtextBox.Text == "Moylish")
+				{
+					MainMenu mainMenu = new MainMenu();
+					mainMenu.Show();
+					this.Hide();
+				}
+				else
+				{
+					MessageBox.Show("Invalid Password");
+					PasswordtextBox.Focus();
+					PasswordtextBox.SelectAll();
+				}
+			}
+		}
 }
+
+		
+	
+
