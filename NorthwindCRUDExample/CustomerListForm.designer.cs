@@ -32,6 +32,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListForm));
 			this.customersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.northwindDataSet = new NorthwindCRUDExample.NorthwindDataSet();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -55,15 +57,13 @@
 			this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.northwindDataSet = new NorthwindCRUDExample.NorthwindDataSet();
 			this.customersTableAdapter = new NorthwindCRUDExample.NorthwindDataSetTableAdapters.CustomersTableAdapter();
 			this.tableAdapterManager = new NorthwindCRUDExample.NorthwindDataSetTableAdapters.TableAdapterManager();
 			((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
 			this.customersBindingNavigator.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// customersBindingNavigator
@@ -105,6 +105,16 @@
 			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorAddNewItem.Text = "Add new";
+			// 
+			// customersBindingSource
+			// 
+			this.customersBindingSource.DataMember = "Customers";
+			this.customersBindingSource.DataSource = this.northwindDataSet;
+			// 
+			// northwindDataSet
+			// 
+			this.northwindDataSet.DataSetName = "NorthwindDataSet";
+			this.northwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// bindingNavigatorCountItem
 			// 
@@ -281,16 +291,6 @@
 			this.dataGridViewTextBoxColumn11.HeaderText = "Fax";
 			this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
 			// 
-			// customersBindingSource
-			// 
-			this.customersBindingSource.DataMember = "Customers";
-			this.customersBindingSource.DataSource = this.northwindDataSet;
-			// 
-			// northwindDataSet
-			// 
-			this.northwindDataSet.DataSetName = "NorthwindDataSet";
-			this.northwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// customersTableAdapter
 			// 
 			this.customersTableAdapter.ClearBeforeFill = true;
@@ -314,9 +314,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).EndInit();
 			this.customersBindingNavigator.ResumeLayout(false);
 			this.customersBindingNavigator.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

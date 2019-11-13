@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace NorthwindCRUDExample
+﻿namespace NorthwindCRUDExample
 {
+	using System;
+	using System.Windows.Forms;
 	public partial class CustomerEditForm : Form
-	{ 
-		
-	
+	{
 		public CustomerEditForm()
 		{
 			InitializeComponent();
 		}
+
 		public CustomerEditForm(MainForm mainForm) : this()
 		{
 			this.MdiParent = mainForm;
@@ -37,6 +28,19 @@ namespace NorthwindCRUDExample
 
 		private void Editbutton_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				SaveValuesAndUpdateCustomerToDatabase();
+				MessageBox.Show("Update succesful");
+			}
+			catch (InvalidCastException ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void SaveValuesAndUpdateCustomerToDatabase()
+		{
 			NorthwindDataSet.CustomersRow drChangeRow = northwindDataSet.Customers.FindByCustomerID(customerIDTextBox.Text);
 			drChangeRow.BeginEdit();
 			GetValues(drChangeRow);
@@ -45,26 +49,44 @@ namespace NorthwindCRUDExample
 			this.Validate();
 			this.customersBindingSource.EndEdit();
 			this.tableAdapterManager.UpdateAll(this.northwindDataSet);
+		}
+
+		private void GetValues(NorthwindDataSet.CustomersRow customersRow)
+		{
+			//customersRow.CustomerID = customerIDTextBox.Text;
+			//customersRow.CompanyName = companyNameTextBox.Text;
+			customersRow.ContactName = contactNameTextBox.Text;
+			customersRow.ContactTitle = contactTitleTextBox.Text;
+			customersRow.Address = addressTextBox.Text;
+			customersRow.City = cityTextBox.Text;
+			customersRow.Region = regionTextBox.Text;
+			customersRow.PostalCode = postalCodeTextBox.Text;
+			customersRow.Country = countryTextBox.Text;
+			customersRow.Phone = phoneTextBox.Text;
+			customersRow.Fax = faxTextBox.Text;
+		}
+
+		private void Deletebutton_Click(object sender, EventArgs e)
+		{
 			try
 			{
-				MessageBox.Show("Update succesful");
+				this.DeleteCustomer();
+				MessageBox.Show("Delete succesful");
 			}
 			catch (InvalidCastException ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
 		}
-		private void GetValues(NorthwindDataSet.CustomersRow drChangeRow)
+
+		private void DeleteCustomer()
 		{
-			drChangeRow.ContactName = contactNameTextBox.Text;
-			drChangeRow.ContactTitle = contactTitleTextBox.Text;
-			drChangeRow.Address = addressTextBox.Text;
-			drChangeRow.City = cityTextBox.Text;
-			drChangeRow.Region = regionTextBox.Text;
-			drChangeRow.PostalCode = postalCodeTextBox.Text;
-			drChangeRow.Country = countryTextBox.Text;
-			drChangeRow.Phone = phoneTextBox.Text;
-			drChangeRow.Fax = faxTextBox.Text;
+			NorthwindDataSet.CustomersRow customersRow = northwindDataSet.Customers.FindByCustomerID(customerIDTextBox.Text);
+			customersRow.Delete();
+			//
+			//	Database
+			//
+			this.customersTableAdapter.Update(this.northwindDataSet);
 		}
 	}
 }

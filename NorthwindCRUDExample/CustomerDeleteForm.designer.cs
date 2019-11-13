@@ -345,7 +345,7 @@
 			this.tableAdapterManager.CustomersTableAdapter = this.customersTableAdapter;
 			this.tableAdapterManager.UpdateOrder = NorthwindCRUDExample.NorthwindDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			// 
-			// Form7
+			// CustomerDeleteForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -354,7 +354,7 @@
 			this.Controls.Add(this.Deletebutton);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.comboBox1);
-			this.Name = "Form7";
+			this.Name = "CustomerDeleteForm";
 			this.Text = "DeleteCustomers ";
 			this.Load += new System.EventHandler(this.Form7_Load);
 			((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
