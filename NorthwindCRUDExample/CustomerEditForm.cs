@@ -68,20 +68,34 @@
 
 		private void Deletebutton_Click(object sender, EventArgs e)
 		{
-			try
+			var confirmResult = MessageBox.Show("Are you sure to delete this item ?",  "Confirm Delete!", MessageBoxButtons.YesNo);
+			if (confirmResult == DialogResult.Yes)
 			{
-				this.DeleteCustomer();
-				MessageBox.Show("Delete succesful");
+				try
+				{
+					this.DeleteCustomer();
+					MessageBox.Show("Delete succesful");
+				}
+				catch (InvalidCastException ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
-			catch (InvalidCastException ex)
+			else
 			{
-				MessageBox.Show(ex.Message);
+				// If 'No', do something here.
 			}
 		}
 
 		private void DeleteCustomer()
 		{
 			NorthwindDataSet.CustomersRow customersRow = northwindDataSet.Customers.FindByCustomerID(customerIDTextBox.Text);
+
+			//if(hasOrders)
+			//{
+			//	MessageBox.Show("Cannot Delete Customer with pending orders");
+			//	throw new Exception();
+			//}
 			customersRow.Delete();
 			//
 			//	Database
