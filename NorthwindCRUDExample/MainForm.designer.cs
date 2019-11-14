@@ -35,6 +35,7 @@
 			this.addCustToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editCustToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteByFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.customerOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -43,7 +44,8 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerGridToolStripMenuItem,
             this.customerDetailsToolStripMenuItem,
-            this.custMaintenanceToolStripMenuItem});
+            this.custMaintenanceToolStripMenuItem,
+            this.customerOrdersToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -62,6 +64,7 @@
 			this.customerDetailsToolStripMenuItem.Name = "customerDetailsToolStripMenuItem";
 			this.customerDetailsToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
 			this.customerDetailsToolStripMenuItem.Text = "Customer Details ";
+			this.customerDetailsToolStripMenuItem.Click += new System.EventHandler(this.CustomerDetailsToolStripMenuItem_Click);
 			// 
 			// custMaintenanceToolStripMenuItem
 			// 
@@ -94,6 +97,13 @@
 			this.deleteByFindToolStripMenuItem.Text = "Delete By Find";
 			this.deleteByFindToolStripMenuItem.Click += new System.EventHandler(this.DeleteByFindToolStripMenuItem_Click);
 			// 
+			// customerOrdersToolStripMenuItem
+			// 
+			this.customerOrdersToolStripMenuItem.Name = "customerOrdersToolStripMenuItem";
+			this.customerOrdersToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+			this.customerOrdersToolStripMenuItem.Text = "Customer Orders";
+			this.customerOrdersToolStripMenuItem.Click += new System.EventHandler(this.CustomerOrdersToolStripMenuItem_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +131,6 @@
 		private System.Windows.Forms.ToolStripMenuItem addCustToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem editCustToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem deleteByFindToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem customerOrdersToolStripMenuItem;
 	}
 }

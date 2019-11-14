@@ -65,6 +65,7 @@
 			// 
 			this.PasswordtextBox.Location = new System.Drawing.Point(78, 105);
 			this.PasswordtextBox.Name = "PasswordtextBox";
+			this.PasswordtextBox.PasswordChar = '*';
 			this.PasswordtextBox.Size = new System.Drawing.Size(172, 20);
 			this.PasswordtextBox.TabIndex = 4;
 			// 
@@ -87,7 +88,7 @@
 			this.Cancelbutton.Text = "Cancel";
 			this.Cancelbutton.UseVisualStyleBackColor = true;
 			// 
-			// Form1
+			// LoginForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +99,7 @@
 			this.Controls.Add(this.UsernametextBox);
 			this.Controls.Add(this.Passwordlable);
 			this.Controls.Add(this.Usernamelabel);
-			this.Name = "Form1";
+			this.Name = "LoginForm";
 			this.Text = "LoginForm1";
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -39,5 +39,19 @@ namespace NorthwindCRUDExample
 			var customerListForm = new CustomerListForm(this);
 			customerListForm.Show();
 		}
+
+		private void CustomerDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var customerViewForm = new CustomerViewForm(this);
+			customerViewForm.Show();
+			
+		}
+
+		private void CustomerOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var customerOrdersForm = new CustomerOrdersForm(this);
+			customerOrdersForm.Show();
+
+		}
 	}
 }

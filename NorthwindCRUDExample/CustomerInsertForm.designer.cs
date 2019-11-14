@@ -175,7 +175,7 @@
 			// NorthwindCustomerslabel1
 			// 
 			this.NorthwindCustomerslabel1.AutoSize = true;
-			this.NorthwindCustomerslabel1.Location = new System.Drawing.Point(12, 9);
+			this.NorthwindCustomerslabel1.Location = new System.Drawing.Point(25, 9);
 			this.NorthwindCustomerslabel1.Name = "NorthwindCustomerslabel1";
 			this.NorthwindCustomerslabel1.Size = new System.Drawing.Size(107, 13);
 			this.NorthwindCustomerslabel1.TabIndex = 0;
@@ -184,7 +184,7 @@
 			// 
 			// AddCustbutton
 			// 
-			this.AddCustbutton.Location = new System.Drawing.Point(400, 251);
+			this.AddCustbutton.Location = new System.Drawing.Point(404, 261);
 			this.AddCustbutton.Name = "AddCustbutton";
 			this.AddCustbutton.Size = new System.Drawing.Size(77, 26);
 			this.AddCustbutton.TabIndex = 2;
@@ -230,7 +230,7 @@
 			this.groupBox1.Controls.Add(this.companyNameTextBox);
 			this.groupBox1.Controls.Add(customerIDLabel);
 			this.groupBox1.Controls.Add(this.customerIDTextBox);
-			this.groupBox1.Location = new System.Drawing.Point(15, 25);
+			this.groupBox1.Location = new System.Drawing.Point(19, 35);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(462, 220);
 			this.groupBox1.TabIndex = 3;
