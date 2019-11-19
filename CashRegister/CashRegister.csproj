@@ -59,6 +59,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TillKeyboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TillKeyboardControl.Designer.cs">
+      <DependentUpon>TillKeyboardControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CashRegisterForm.resx">
       <DependentUpon>CashRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TillKeyboardControl.resx">
+      <DependentUpon>TillKeyboardControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="NorthwindDataSet.xsc">
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>
     </None>

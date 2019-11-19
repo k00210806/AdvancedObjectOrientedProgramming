@@ -52,6 +52,7 @@
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.tillKeyboardControl1 = new CashRegister.TillKeyboardControl();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
@@ -232,11 +233,19 @@
 			this.textBox3.Size = new System.Drawing.Size(104, 20);
 			this.textBox3.TabIndex = 8;
 			// 
+			// tillKeyboardControl1
+			// 
+			this.tillKeyboardControl1.Location = new System.Drawing.Point(518, 24);
+			this.tillKeyboardControl1.Name = "tillKeyboardControl1";
+			this.tillKeyboardControl1.Size = new System.Drawing.Size(410, 414);
+			this.tillKeyboardControl1.TabIndex = 9;
+			// 
 			// CashRegisterForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(860, 450);
+			this.ClientSize = new System.Drawing.Size(954, 450);
+			this.Controls.Add(this.tillKeyboardControl1);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.textBox1);
@@ -284,6 +293,7 @@
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.TextBox textBox3;
+		private TillKeyboardControl tillKeyboardControl1;
 	}
 }
 
