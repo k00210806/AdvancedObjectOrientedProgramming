@@ -46,8 +46,8 @@
 			this.n2Button = new System.Windows.Forms.Button();
 			this.n1Button = new System.Windows.Forms.Button();
 			this.n50Button = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
-			this.tenButton = new System.Windows.Forms.Button();
+			this.n20Button = new System.Windows.Forms.Button();
+			this.n10Button = new System.Windows.Forms.Button();
 			this.outerTableLayoutPanel.SuspendLayout();
 			this.numberKeyTableLayoutPanel.SuspendLayout();
 			this.SuspendLayout();
@@ -91,6 +91,7 @@
 			this.cashButton.TabIndex = 1;
 			this.cashButton.Text = "Cash";
 			this.cashButton.UseVisualStyleBackColor = true;
+			this.cashButton.Click += new System.EventHandler(this.CashButton_Click);
 			// 
 			// nextButton
 			// 
@@ -101,6 +102,7 @@
 			this.nextButton.TabIndex = 2;
 			this.nextButton.Text = "Next";
 			this.nextButton.UseVisualStyleBackColor = true;
+			this.nextButton.Click += new System.EventHandler(this.NextButton_Click);
 			// 
 			// numberKeyTableLayoutPanel
 			// 
@@ -121,8 +123,8 @@
 			this.numberKeyTableLayoutPanel.Controls.Add(this.n2Button, 1, 1);
 			this.numberKeyTableLayoutPanel.Controls.Add(this.n1Button, 0, 1);
 			this.numberKeyTableLayoutPanel.Controls.Add(this.n50Button, 2, 0);
-			this.numberKeyTableLayoutPanel.Controls.Add(this.button1, 1, 0);
-			this.numberKeyTableLayoutPanel.Controls.Add(this.tenButton, 0, 0);
+			this.numberKeyTableLayoutPanel.Controls.Add(this.n20Button, 1, 0);
+			this.numberKeyTableLayoutPanel.Controls.Add(this.n10Button, 0, 0);
 			this.numberKeyTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.numberKeyTableLayoutPanel.Location = new System.Drawing.Point(3, 55);
 			this.numberKeyTableLayoutPanel.Name = "numberKeyTableLayoutPanel";
@@ -154,6 +156,7 @@
 			this.dotButton.TabIndex = 14;
 			this.dotButton.Text = ".";
 			this.dotButton.UseVisualStyleBackColor = true;
+			this.dotButton.Click += new System.EventHandler(this.DotButton_Click);
 			// 
 			// button10
 			// 
@@ -244,6 +247,7 @@
 			this.n2Button.TabIndex = 4;
 			this.n2Button.Text = "2";
 			this.n2Button.UseVisualStyleBackColor = true;
+			this.n2Button.Click += new System.EventHandler(this.N2Button_Click);
 			// 
 			// n1Button
 			// 
@@ -265,28 +269,30 @@
 			this.n50Button.TabIndex = 2;
 			this.n50Button.Text = "50";
 			this.n50Button.UseVisualStyleBackColor = true;
+			this.n50Button.Click += new System.EventHandler(this.N50Button_Click);
 			// 
-			// button1
+			// n20Button
 			// 
-			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(137, 3);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(128, 44);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "20";
-			this.button1.UseVisualStyleBackColor = true;
+			this.n20Button.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.n20Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.n20Button.Location = new System.Drawing.Point(137, 3);
+			this.n20Button.Name = "n20Button";
+			this.n20Button.Size = new System.Drawing.Size(128, 44);
+			this.n20Button.TabIndex = 1;
+			this.n20Button.Text = "20";
+			this.n20Button.UseVisualStyleBackColor = true;
+			this.n20Button.Click += new System.EventHandler(this.N20Button_Click);
 			// 
-			// tenButton
+			// n10Button
 			// 
-			this.tenButton.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tenButton.Location = new System.Drawing.Point(3, 3);
-			this.tenButton.Name = "tenButton";
-			this.tenButton.Size = new System.Drawing.Size(128, 44);
-			this.tenButton.TabIndex = 0;
-			this.tenButton.Text = "10";
-			this.tenButton.UseVisualStyleBackColor = true;
+			this.n10Button.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.n10Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.n10Button.Location = new System.Drawing.Point(3, 3);
+			this.n10Button.Name = "n10Button";
+			this.n10Button.Size = new System.Drawing.Size(128, 44);
+			this.n10Button.TabIndex = 0;
+			this.n10Button.Text = "10";
+			this.n10Button.UseVisualStyleBackColor = true;
 			// 
 			// TillKeyboardControl
 			// 
@@ -317,8 +323,8 @@
 		private System.Windows.Forms.Button n2Button;
 		private System.Windows.Forms.Button n1Button;
 		private System.Windows.Forms.Button n50Button;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button tenButton;
+		private System.Windows.Forms.Button n20Button;
+		private System.Windows.Forms.Button n10Button;
 		private System.Windows.Forms.Button button11;
 		private System.Windows.Forms.Button button13;
 		private System.Windows.Forms.Button dotButton;

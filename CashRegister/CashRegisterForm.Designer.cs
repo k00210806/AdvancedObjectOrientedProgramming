@@ -49,9 +49,9 @@
 			this.TotalDueLabel = new System.Windows.Forms.Label();
 			this.CashLabel = new System.Windows.Forms.Label();
 			this.ChangeDueLabel = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.totalDueTextBox = new System.Windows.Forms.TextBox();
+			this.cashTextBox = new System.Windows.Forms.TextBox();
+			this.chanageTextBox = new System.Windows.Forms.TextBox();
 			this.tillKeyboardControl1 = new CashRegister.TillKeyboardControl();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -96,6 +96,7 @@
 			this.numericUpDown1.Name = "numericUpDown1";
 			this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
 			this.numericUpDown1.TabIndex = 3;
+			this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
 			// 
 			// comboBox2
 			// 
@@ -212,29 +213,34 @@
 			this.ChangeDueLabel.TabIndex = 5;
 			this.ChangeDueLabel.Text = "Change Due";
 			// 
-			// textBox1
+			// totalDueTextBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(388, 232);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(103, 20);
-			this.textBox1.TabIndex = 6;
+			this.totalDueTextBox.Location = new System.Drawing.Point(388, 232);
+			this.totalDueTextBox.Name = "totalDueTextBox";
+			this.totalDueTextBox.Size = new System.Drawing.Size(103, 20);
+			this.totalDueTextBox.TabIndex = 6;
+			this.totalDueTextBox.Text = "0";
 			// 
-			// textBox2
+			// cashTextBox
 			// 
-			this.textBox2.Location = new System.Drawing.Point(387, 261);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(104, 20);
-			this.textBox2.TabIndex = 7;
+			this.cashTextBox.Location = new System.Drawing.Point(387, 261);
+			this.cashTextBox.Name = "cashTextBox";
+			this.cashTextBox.Size = new System.Drawing.Size(104, 20);
+			this.cashTextBox.TabIndex = 7;
 			// 
-			// textBox3
+			// chanageTextBox
 			// 
-			this.textBox3.Location = new System.Drawing.Point(387, 290);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(104, 20);
-			this.textBox3.TabIndex = 8;
+			this.chanageTextBox.Location = new System.Drawing.Point(387, 290);
+			this.chanageTextBox.Name = "chanageTextBox";
+			this.chanageTextBox.Size = new System.Drawing.Size(104, 20);
+			this.chanageTextBox.TabIndex = 8;
 			// 
 			// tillKeyboardControl1
 			// 
+			this.tillKeyboardControl1.CentAmmount = 0;
+			this.tillKeyboardControl1.CentAmmountBuilder = null;
+			this.tillKeyboardControl1.EuroAmmount = 0;
+			this.tillKeyboardControl1.EuroAmmountBuilder = null;
 			this.tillKeyboardControl1.Location = new System.Drawing.Point(518, 24);
 			this.tillKeyboardControl1.Name = "tillKeyboardControl1";
 			this.tillKeyboardControl1.Size = new System.Drawing.Size(410, 414);
@@ -246,9 +252,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(954, 450);
 			this.Controls.Add(this.tillKeyboardControl1);
-			this.Controls.Add(this.textBox3);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.chanageTextBox);
+			this.Controls.Add(this.cashTextBox);
+			this.Controls.Add(this.totalDueTextBox);
 			this.Controls.Add(this.ChangeDueLabel);
 			this.Controls.Add(this.CashLabel);
 			this.Controls.Add(this.TotalDueLabel);
@@ -290,9 +296,9 @@
 		private System.Windows.Forms.Label TotalDueLabel;
 		private System.Windows.Forms.Label CashLabel;
 		private System.Windows.Forms.Label ChangeDueLabel;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox totalDueTextBox;
+		private System.Windows.Forms.TextBox cashTextBox;
+		private System.Windows.Forms.TextBox chanageTextBox;
 		private TillKeyboardControl tillKeyboardControl1;
 	}
 }

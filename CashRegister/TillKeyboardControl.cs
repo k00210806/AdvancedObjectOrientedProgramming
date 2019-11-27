@@ -16,7 +16,7 @@ namespace CashRegister
 		{
 			InitializeComponent();
 		}
-
+		public CashRegisterForm cashRegisterForm;
 
 		public int EuroAmmount { get; set; }
 		public int CentAmmount { get; set; }
@@ -30,8 +30,44 @@ namespace CashRegister
 
 		private void ResetMoney()
 		{
-			this.EuroAmmount = 0;
-			this.CentAmmount = 0;
+			this.cashRegisterForm.ResetTotalText();
+		}
+
+		private void N2Button_Click(object sender, EventArgs e)
+		{
+			this.AppendNumber("2");
+		}
+
+		private void AppendNumber(string text)
+		{
+			this.cashRegisterForm.AppendTotalText(text);
+
+		}
+
+		private void DotButton_Click(object sender, EventArgs e)
+		{
+			this.AppendNumber(".");
+		}
+
+		private void N50Button_Click(object sender, EventArgs e)
+		{
+			this.AppendNumber("50");
+		}
+
+		private void N20Button_Click(object sender, EventArgs e)
+		{
+			this.AppendNumber("20");
+		}
+
+		private void CashButton_Click(object sender, EventArgs e)
+		{
+			this.cashRegisterForm.CashOut();
+
+		}
+
+		private void NextButton_Click(object sender, EventArgs e)
+		{
+			this.cashRegisterForm.NextCashOpperation();
 		}
 	}
 }
