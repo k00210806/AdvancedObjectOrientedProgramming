@@ -16,5 +16,28 @@ namespace OrderProcessing
         {
             InitializeComponent();
         }
+
+        private void CustomersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.customersBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.northwindDataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'northwindDataSet.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this.northwindDataSet.Customers);
+
+        }
+
+        private void CustomersBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.customersBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.northwindDataSet);
+
+        }
     }
 }

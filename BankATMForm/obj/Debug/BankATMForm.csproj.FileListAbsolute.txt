@@ -18,3 +18,13 @@ U:\tutorial\BankATMForm\obj\Debug\BankATMForm.csproj.GenerateResource.cache
 U:\tutorial\BankATMForm\obj\Debug\BankATMForm.csproj.CoreCompileInputs.cache
 U:\tutorial\BankATMForm\obj\Debug\BankATMForm.exe
 U:\tutorial\BankATMForm\obj\Debug\BankATMForm.pdb
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\bin\Debug\BankATMForm.exe.config
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\bin\Debug\BankATMForm.exe
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\bin\Debug\BankATMForm.pdb
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.csprojAssemblyReference.cache
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.Form1.resources
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.Properties.Resources.resources
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.csproj.GenerateResource.cache
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.csproj.CoreCompileInputs.cache
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.exe
+C:\Users\k00210896\Source\Repos\AdvancedObjectOrientedProgramming\BankATMForm\obj\Debug\BankATMForm.pdb
