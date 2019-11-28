@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindCRUDExample", "Nor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashRegister", "CashRegister\CashRegister.csproj", "{27E4D133-DD74-4700-8ACE-1BF0CFB6DF25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessing", "OrderProcessing\OrderProcessing.csproj", "{8B0D47F9-C002-4EA0-9272-F51098F86F86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{27E4D133-DD74-4700-8ACE-1BF0CFB6DF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27E4D133-DD74-4700-8ACE-1BF0CFB6DF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27E4D133-DD74-4700-8ACE-1BF0CFB6DF25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0D47F9-C002-4EA0-9272-F51098F86F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0D47F9-C002-4EA0-9272-F51098F86F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0D47F9-C002-4EA0-9272-F51098F86F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0D47F9-C002-4EA0-9272-F51098F86F86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
