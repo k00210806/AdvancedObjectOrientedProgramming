@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace OrderProcessing {
     
     
@@ -5786,7 +5788,12 @@ SELECT OrderID, CustomerID, OrderDate, RequiredDate, CustOrderRef, OrderClosed F
         public virtual int Update(string CustomerID, global::System.Nullable<global::System.DateTime> OrderDate, global::System.Nullable<global::System.DateTime> RequiredDate, string CustOrderRef, string OrderClosed, int Original_OrderID, string Original_CustomerID, global::System.Nullable<global::System.DateTime> Original_OrderDate, global::System.Nullable<global::System.DateTime> Original_RequiredDate, string Original_CustOrderRef, string Original_OrderClosed) {
             return this.Update(Original_OrderID, CustomerID, OrderDate, RequiredDate, CustOrderRef, OrderClosed, Original_OrderID, Original_CustomerID, Original_OrderDate, Original_RequiredDate, Original_CustOrderRef, Original_OrderClosed);
         }
-    }
+
+		internal void Fill(NorthwindDataSet.SalesOrderDetailsDataTable salesOrderDetails)
+		{
+			//throw new NotImplementedException();
+		}
+	}
     
     /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
