@@ -45,7 +45,7 @@
             this.northwindDataSet = new OrderProcessing.NorthwindDataSet();
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.companyNameTextBox = new System.Windows.Forms.TextBox();
-            this.customerIDComboBox = new System.Windows.Forms.ComboBox();
+            this.customerldComboBox = new System.Windows.Forms.ComboBox();
             this.customersTableAdapter = new OrderProcessing.NorthwindDataSetTableAdapters.CustomersTableAdapter();
             this.tableAdapterManager = new OrderProcessing.NorthwindDataSetTableAdapters.TableAdapterManager();
             this.productsTableAdapter = new OrderProcessing.NorthwindDataSetTableAdapters.ProductsTableAdapter();
@@ -55,26 +55,26 @@
             this.salesOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.custOrderRefTextBox = new System.Windows.Forms.TextBox();
-            this.orderIDComboBox = new System.Windows.Forms.ComboBox();
+            this.OrderIdComboBox = new System.Windows.Forms.ComboBox();
             this.orderDeatilsGroupBox = new System.Windows.Forms.GroupBox();
+            this.lvProducts = new System.Windows.Forms.ListView();
+            this.txtProductNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtUnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtCost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.totalTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TotalLabel = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.okayButton = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productNameComboBox = new System.Windows.Forms.ComboBox();
+            this.productsComboBox = new System.Windows.Forms.ComboBox();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productIDComboBox = new System.Windows.Forms.ComboBox();
+            this.productsIDComboBox = new System.Windows.Forms.ComboBox();
+            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.nextButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             customerIDLabel = new System.Windows.Forms.Label();
             companyNameLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
@@ -92,8 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.salesOrdersBindingSource)).BeginInit();
             this.orderDeatilsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // customerIDLabel
@@ -195,7 +195,7 @@
             this.groupBox1.Controls.Add(companyNameLabel);
             this.groupBox1.Controls.Add(this.companyNameTextBox);
             this.groupBox1.Controls.Add(customerIDLabel);
-            this.groupBox1.Controls.Add(this.customerIDComboBox);
+            this.groupBox1.Controls.Add(this.customerldComboBox);
             this.groupBox1.Location = new System.Drawing.Point(55, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(500, 114);
@@ -237,16 +237,16 @@
             this.companyNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.companyNameTextBox.TabIndex = 3;
             // 
-            // customerIDComboBox
+            // customerldComboBox
             // 
-            this.customerIDComboBox.DataSource = this.customersBindingSource;
-            this.customerIDComboBox.DisplayMember = "CustomerID";
-            this.customerIDComboBox.FormattingEnabled = true;
-            this.customerIDComboBox.Location = new System.Drawing.Point(80, 24);
-            this.customerIDComboBox.Name = "customerIDComboBox";
-            this.customerIDComboBox.Size = new System.Drawing.Size(121, 21);
-            this.customerIDComboBox.TabIndex = 1;
-            this.customerIDComboBox.SelectedIndexChanged += new System.EventHandler(this.CustomerIDComboBox_SelectedIndexChanged);
+            this.customerldComboBox.DataSource = this.customersBindingSource;
+            this.customerldComboBox.DisplayMember = "CustomerID";
+            this.customerldComboBox.FormattingEnabled = true;
+            this.customerldComboBox.Location = new System.Drawing.Point(80, 24);
+            this.customerldComboBox.Name = "customerldComboBox";
+            this.customerldComboBox.Size = new System.Drawing.Size(121, 21);
+            this.customerldComboBox.TabIndex = 1;
+            this.customerldComboBox.SelectedIndexChanged += new System.EventHandler(this.CustomerIDComboBox_SelectedIndexChanged);
             // 
             // customersTableAdapter
             // 
@@ -279,7 +279,7 @@
             this.ordersGroupBox.Controls.Add(custOrderRefLabel);
             this.ordersGroupBox.Controls.Add(this.custOrderRefTextBox);
             this.ordersGroupBox.Controls.Add(orderIDLabel);
-            this.ordersGroupBox.Controls.Add(this.orderIDComboBox);
+            this.ordersGroupBox.Controls.Add(this.OrderIdComboBox);
             this.ordersGroupBox.Location = new System.Drawing.Point(55, 159);
             this.ordersGroupBox.Name = "ordersGroupBox";
             this.ordersGroupBox.Size = new System.Drawing.Size(604, 115);
@@ -317,29 +317,29 @@
             this.custOrderRefTextBox.Size = new System.Drawing.Size(200, 20);
             this.custOrderRefTextBox.TabIndex = 3;
             // 
-            // orderIDComboBox
+            // OrderIdComboBox
             // 
-            this.orderIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesOrdersBindingSource, "OrderID", true));
-            this.orderIDComboBox.FormattingEnabled = true;
-            this.orderIDComboBox.Location = new System.Drawing.Point(71, 17);
-            this.orderIDComboBox.Name = "orderIDComboBox";
-            this.orderIDComboBox.Size = new System.Drawing.Size(121, 21);
-            this.orderIDComboBox.TabIndex = 1;
-            this.orderIDComboBox.SelectedIndexChanged += new System.EventHandler(this.OrderIDComboBox_SelectedIndexChanged);
+            this.OrderIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesOrdersBindingSource, "OrderID", true));
+            this.OrderIdComboBox.FormattingEnabled = true;
+            this.OrderIdComboBox.Location = new System.Drawing.Point(71, 17);
+            this.OrderIdComboBox.Name = "OrderIdComboBox";
+            this.OrderIdComboBox.Size = new System.Drawing.Size(121, 21);
+            this.OrderIdComboBox.TabIndex = 1;
+            this.OrderIdComboBox.SelectedIndexChanged += new System.EventHandler(this.OrderIDComboBox_SelectedIndexChanged);
             // 
             // orderDeatilsGroupBox
             // 
-            this.orderDeatilsGroupBox.Controls.Add(this.listView1);
+            this.orderDeatilsGroupBox.Controls.Add(this.lvProducts);
             this.orderDeatilsGroupBox.Controls.Add(this.totalTextBox);
-            this.orderDeatilsGroupBox.Controls.Add(this.label1);
+            this.orderDeatilsGroupBox.Controls.Add(this.TotalLabel);
             this.orderDeatilsGroupBox.Controls.Add(this.editButton);
             this.orderDeatilsGroupBox.Controls.Add(this.deleteButton);
             this.orderDeatilsGroupBox.Controls.Add(this.okayButton);
             this.orderDeatilsGroupBox.Controls.Add(this.numericUpDown1);
             this.orderDeatilsGroupBox.Controls.Add(productNameLabel);
-            this.orderDeatilsGroupBox.Controls.Add(this.productNameComboBox);
+            this.orderDeatilsGroupBox.Controls.Add(this.productsComboBox);
             this.orderDeatilsGroupBox.Controls.Add(productIDLabel);
-            this.orderDeatilsGroupBox.Controls.Add(this.productIDComboBox);
+            this.orderDeatilsGroupBox.Controls.Add(this.productsIDComboBox);
             this.orderDeatilsGroupBox.Location = new System.Drawing.Point(55, 291);
             this.orderDeatilsGroupBox.Name = "orderDeatilsGroupBox";
             this.orderDeatilsGroupBox.Size = new System.Drawing.Size(700, 257);
@@ -348,6 +348,47 @@
             this.orderDeatilsGroupBox.Text = "Order Details";
             this.orderDeatilsGroupBox.Visible = false;
             // 
+            // lvProducts
+            // 
+            this.lvProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.txtProductNumber,
+            this.txtDescription,
+            this.txtUnitPrice,
+            this.txtQuantity,
+            this.txtCost});
+            this.lvProducts.HideSelection = false;
+            this.lvProducts.Location = new System.Drawing.Point(32, 63);
+            this.lvProducts.Name = "lvProducts";
+            this.lvProducts.Size = new System.Drawing.Size(443, 80);
+            this.lvProducts.TabIndex = 11;
+            this.lvProducts.UseCompatibleStateImageBehavior = false;
+            this.lvProducts.View = System.Windows.Forms.View.Details;
+            this.lvProducts.SelectedIndexChanged += new System.EventHandler(this.ProductsListBox_SelectedIndexChanged_1);
+            // 
+            // txtProductNumber
+            // 
+            this.txtProductNumber.Text = "Product ID";
+            this.txtProductNumber.Width = 110;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Text = "Description";
+            this.txtDescription.Width = 90;
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Text = "Unit Price";
+            this.txtUnitPrice.Width = 81;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Text = "Quantity";
+            // 
+            // txtCost
+            // 
+            this.txtCost.Text = "Cost";
+            this.txtCost.Width = 76;
+            // 
             // totalTextBox
             // 
             this.totalTextBox.Location = new System.Drawing.Point(400, 152);
@@ -355,15 +396,15 @@
             this.totalTextBox.Size = new System.Drawing.Size(75, 20);
             this.totalTextBox.TabIndex = 10;
             // 
-            // label1
+            // TotalLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(345, 155);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Total";
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Location = new System.Drawing.Point(345, 155);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TotalLabel.Size = new System.Drawing.Size(31, 13);
+            this.TotalLabel.TabIndex = 9;
+            this.TotalLabel.Text = "Total";
             // 
             // editButton
             // 
@@ -373,6 +414,7 @@
             this.editButton.TabIndex = 8;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // deleteButton
             // 
@@ -382,6 +424,7 @@
             this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // okayButton
             // 
@@ -400,33 +443,33 @@
             this.numericUpDown1.Size = new System.Drawing.Size(66, 20);
             this.numericUpDown1.TabIndex = 5;
             // 
-            // productsBindingSource1
+            // productsComboBox
             // 
-            this.productsBindingSource1.DataMember = "Products";
-            this.productsBindingSource1.DataSource = this.northwindDataSet;
-            // 
-            // productNameComboBox
-            // 
-            this.productNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductName", true));
-            this.productNameComboBox.FormattingEnabled = true;
-            this.productNameComboBox.Location = new System.Drawing.Point(326, 18);
-            this.productNameComboBox.Name = "productNameComboBox";
-            this.productNameComboBox.Size = new System.Drawing.Size(121, 21);
-            this.productNameComboBox.TabIndex = 3;
+            this.productsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductName", true));
+            this.productsComboBox.FormattingEnabled = true;
+            this.productsComboBox.Location = new System.Drawing.Point(326, 18);
+            this.productsComboBox.Name = "productsComboBox";
+            this.productsComboBox.Size = new System.Drawing.Size(121, 21);
+            this.productsComboBox.TabIndex = 3;
             // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataMember = "Products";
             this.productsBindingSource.DataSource = this.northwindDataSet;
             // 
-            // productIDComboBox
+            // productsIDComboBox
             // 
-            this.productIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductID", true));
-            this.productIDComboBox.FormattingEnabled = true;
-            this.productIDComboBox.Location = new System.Drawing.Point(96, 18);
-            this.productIDComboBox.Name = "productIDComboBox";
-            this.productIDComboBox.Size = new System.Drawing.Size(121, 21);
-            this.productIDComboBox.TabIndex = 1;
+            this.productsIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductID", true));
+            this.productsIDComboBox.FormattingEnabled = true;
+            this.productsIDComboBox.Location = new System.Drawing.Point(96, 18);
+            this.productsIDComboBox.Name = "productsIDComboBox";
+            this.productsIDComboBox.Size = new System.Drawing.Size(121, 21);
+            this.productsIDComboBox.TabIndex = 1;
+            // 
+            // productsBindingSource1
+            // 
+            this.productsBindingSource1.DataMember = "Products";
+            this.productsBindingSource1.DataSource = this.northwindDataSet;
             // 
             // nextButton
             // 
@@ -436,62 +479,24 @@
             this.nextButton.TabIndex = 3;
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
-            // listView1
+            // CloseButton
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(32, 63);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(443, 80);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Product ID";
-            this.columnHeader1.Width = 110;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Description";
-            this.columnHeader2.Width = 90;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Unit Price";
-            this.columnHeader3.Width = 81;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Quantity";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Cost";
-            this.columnHeader5.Width = 76;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(534, 554);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CloseButton.Location = new System.Drawing.Point(534, 554);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(61, 23);
+            this.CloseButton.TabIndex = 4;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // ModifyOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 582);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.orderDeatilsGroupBox);
             this.Controls.Add(this.ordersGroupBox);
@@ -509,8 +514,8 @@
             this.orderDeatilsGroupBox.ResumeLayout(false);
             this.orderDeatilsGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -525,33 +530,33 @@
 		private System.Windows.Forms.TextBox cityTextBox;
 		private System.Windows.Forms.TextBox addressTextBox;
 		private System.Windows.Forms.TextBox companyNameTextBox;
-		private System.Windows.Forms.ComboBox customerIDComboBox;
+		private System.Windows.Forms.ComboBox customerldComboBox;
 		private NorthwindDataSetTableAdapters.SalesOrdersTableAdapter salesOrdersTableAdapter;
 		private System.Windows.Forms.GroupBox ordersGroupBox;
 		private System.Windows.Forms.BindingSource salesOrdersBindingSource;
 		private System.Windows.Forms.DateTimePicker requiredDateDateTimePicker;
 		private System.Windows.Forms.DateTimePicker orderDateDateTimePicker;
 		private System.Windows.Forms.TextBox custOrderRefTextBox;
-		private System.Windows.Forms.ComboBox orderIDComboBox;
+		private System.Windows.Forms.ComboBox OrderIdComboBox;
 		private NorthwindDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
 		private System.Windows.Forms.GroupBox orderDeatilsGroupBox;
 		private System.Windows.Forms.BindingSource productsBindingSource;
-		private System.Windows.Forms.ComboBox productNameComboBox;
-		private System.Windows.Forms.ComboBox productIDComboBox;
+		private System.Windows.Forms.ComboBox productsComboBox;
+		private System.Windows.Forms.ComboBox productsIDComboBox;
 		private System.Windows.Forms.TextBox totalTextBox;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label TotalLabel;
 		private System.Windows.Forms.Button editButton;
 		private System.Windows.Forms.Button deleteButton;
 		private System.Windows.Forms.Button okayButton;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
 		private System.Windows.Forms.BindingSource productsBindingSource1;
 		private System.Windows.Forms.Button nextButton;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView lvProducts;
+        private System.Windows.Forms.ColumnHeader txtProductNumber;
+        private System.Windows.Forms.ColumnHeader txtDescription;
+        private System.Windows.Forms.ColumnHeader txtUnitPrice;
+        private System.Windows.Forms.ColumnHeader txtQuantity;
+        private System.Windows.Forms.ColumnHeader txtCost;
+        private System.Windows.Forms.Button CloseButton;
     }
 }
